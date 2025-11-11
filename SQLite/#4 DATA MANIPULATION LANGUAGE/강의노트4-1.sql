@@ -1,3 +1,4 @@
+-- <AND, OR>
 SELECT
 	*
 FROM 
@@ -31,7 +32,7 @@ WHERE
 	release_date BETWEEN 2020 AND 2024; -- BETWEEN 연산자 사용
   
 
--- <membership condition> 키워드: IN, NOT IN
+-- <membership condition> IN, NOT IN
 SELECT
 	*
 FROM
@@ -40,7 +41,7 @@ WHERE
 	genres IN ('Documentary', 'Comedy'); -- genres = 'Documentary' OR genres = 'Comedy'; 이것과 같은 명령어
   
 
--- <Pattern matching> 키워드: LIKE, %, ___
+-- <Pattern matching> LIKE, %, ___
 SELECT
 	*
 FROM
@@ -88,3 +89,11 @@ FROM
 	movies
 WHERE
 	title LIKE 'The ___ %';
+
+
+-- <SELECT CASE> WHEN, THEN
+SELECT
+	title,
+	CASE WHEN rating >= 8 THEN '^-^' WHEN rating <= 6 THEN 'ㅠ.ㅠ' -- WHEN 은 if와 같다, WHEN일때 THEN을 실행
+	END AS good_or_not
+FROM movies;
