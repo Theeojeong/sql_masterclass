@@ -1,9 +1,12 @@
 [project]
 name = "sql-masterclass"
 version = "0.1.0"
-description = "Add your description here"
+description = "SQL Masterclass with Autonomous Agent System"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "ipykernel>=7.1.0",
 ]
+
+[project.scripts]
+agent = "agent.main:main"
