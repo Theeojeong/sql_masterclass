@@ -13,7 +13,7 @@ ORDER BY -- 5
 	total_revenue DESC
 ;
 
-
+---------------------------------------------------------------------------------------------------------
 SELECT
 	release_date,
 	round(AVG(rating), 2) AS avg_rating
@@ -28,4 +28,15 @@ ORDER BY
 	avg_rating DESC
 ;
 
-	
+---------------------------------------------------------------------------------------------------------
+SELECT
+	release_date, -- GROUP BY 하지 않은 칼럼을 SELECT 하는 것은 의미 없음
+	AVG(rating) AS avg_rating 
+FROM
+	movies
+WHERE
+	release_date IS NOT NULL AND rating IS NOT NULL
+GROUP BY
+	release_date
+ORDER BY
+	avg_rating DESC;
