@@ -94,6 +94,6 @@ WHERE
 -- <SELECT CASE> WHEN, THEN
 SELECT
 	title,
-	CASE WHEN rating >= 8 THEN '^-^' WHEN rating <= 6 THEN 'ㅠ.ㅠ' -- WHEN 은 if와 같다, WHEN일때 THEN을 실행
+	CASE WHEN rating >= 8 THEN '^-^' WHEN rating <= 6 THEN 'ㅠ.ㅠ' -- WHEN 은 if와 같다, WHEN이 TRUE일때 THEN을 실행
 	END AS good_or_not
 FROM movies;
