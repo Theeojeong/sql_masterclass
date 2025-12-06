@@ -1,5 +1,7 @@
 Redis는 매우 빠르다
 
+Redis = Remote Dictionary Service
+
 in-memory 데이터베이스이기 때문이다
 
 메모리에서 값을 읽는 것은 디스크에서 읽는 것보다 항상 빠르다
