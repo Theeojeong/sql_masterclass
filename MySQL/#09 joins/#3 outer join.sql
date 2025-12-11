@@ -1,7 +1,6 @@
 -- outer join에는 right outer join과 left outer join이 있음
 -- 그리고 inner처럼 outer는 생략 가능
 
-
 SELECT
  	dogs.name AS dog_name,
  	owners.name AS owner_name,

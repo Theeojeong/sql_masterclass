@@ -10,6 +10,7 @@ FOREIGN KEY (owner_id) REFERENCES owners (owner_id) ON DELETE SET NULL,
 CONSTRAINT breed_fk FOREIGN KEY (breed_id) REFERENCES breeds (breed_id) ON DELETE SET NULL
 );
 
+
 CREATE TABLE owners (
 owner_id BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(50) NOT NULL,
@@ -18,12 +19,14 @@ phone VARCHAR(20),
 address TINYTEXT
 );
 
+
 CREATE TABLE breeds (
 breed_id BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(50) NOT NULL,
 size_category ENUM ('small', 'medium', 'big') DEFAULT 'small',
 typical_lifespan TINYINT
 );
+
 
 CREATE TABLE pet_passports (
 pet_passport_id BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -34,11 +37,13 @@ dog_id BIGINT UNSIGNED UNIQUE,
 FOREIGN KEY (dog_id) REFERENCES dogs (dog_id) ON DELETE CASCADE
 );
 
+
 CREATE TABLE tricks (
 trick_id BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(50) UNIQUE NOT NULL,
 difficulty ENUM('easy', 'medium', 'hard') NOT NULL DEFAULT 'easy'
 );
+
 
 CREATE TABLE dog_tricks (
 dog_id BIGINT UNSIGNED,
@@ -50,6 +55,7 @@ FOREIGN KEY (dog_id) REFERENCES dogs (dog_id) ON DELETE CASCADE,
 FOREIGN KEY (trick_id) REFERENCES tricks (trick_id) ON DELETE CASCADE
 );
 
+
 -- INSERT
 INSERT INTO breeds (name, size_category, typical_lifespan) VALUES
 ('Labrador Retriever', 'big', 12),
@@ -59,7 +65,6 @@ INSERT INTO breeds (name, size_category, typical_lifespan) VALUES
 ('Beagle', 'medium', 13),
 ('Poodle', 'medium', 14),
 ('Chihuahua', 'small', 15);
-
 
 
 INSERT INTO owners (name, email, phone, address) VALUES
@@ -87,6 +92,7 @@ INSERT INTO dogs (name, date_of_birth, weight, breed_id, owner_id) VALUES
 ('Chloe', '2019-04-30', 20.1, 6, 6),
 ('Bear', '2018-01-08', 33.5, 2, 7),
 ('Penny', '2020-06-22', 7.2, 4, NULL);
+
 
 INSERT INTO tricks (name, difficulty) VALUES
 ('Sit', 'easy'),
