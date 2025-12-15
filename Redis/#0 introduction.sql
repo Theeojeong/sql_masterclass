@@ -28,6 +28,21 @@ TB 용량의 디스크를 사용할 수도 있다
 
 그 값을 Redis에 저장한다
 
-
 Redis는 현재 메모리 상태를 백업하는 데이터베이스로서 작동하는 것이다
 
+-----------------------------------------------------------------
+저는 docker로 설치를 하였습니다.
+
+1. Redis 컨테이너 생성
+- redis-container 이름으로 6379 포트 번호로 연결
+docker run -d --name redis-container -p 6379:6379 redis
+
+2. 컨테이너가 실행 중인지 확인
+- redis-container 라는 이름의 컨테이너가 표시되어야합니다.
+docker ps
+
+3. Redis가 동작 중인지 확인
+- redis-cli 접속
+docker exec -it redis-container redis-cli
+- ping이라고 쳤을 때 pong이라고 출력되어야 합니다.
+ping
